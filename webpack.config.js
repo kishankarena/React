@@ -7,6 +7,11 @@ module.exports = {
   output: {
     filename: "bundle.[hash].js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/dist"
+  },
+  devtool: "inline-source-map",
+  performance:{
+   hints:false
   },
   plugins: [
     new HtmlWebpackPlugin({
