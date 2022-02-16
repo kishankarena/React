@@ -2,19 +2,19 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  mode:'development',
+  mode: 'development',
   entry: "./src/index.js",
   output: {
     filename: "bundle.[hash].js",
     path: path.resolve(__dirname, "dist")
   },
   devtool: "inline-source-map",
-  performance:{
-   hints:false
+  performance: {
+    hints: false
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html", 
+      template: "./public/index.html",
     }),
   ],
   resolve: {
