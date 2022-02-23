@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.app {
+
+    justify-content: center;
+    margin: 100px auto;
+    width: 350px;
+    Height: 550px;
+    background-color: aqua;
+}
