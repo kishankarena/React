@@ -2,13 +2,81 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+
+}
+
+body {
+    background-color: rgba(240, 239, 233, 255);
 }
 
 .app {
 
-    justify-content: center;
     margin: 100px auto;
     width: 350px;
-    Height: 550px;
-    background-color: aqua;
+    /* max-height: 500px; */
+    background-color: rgba(255, 255, 255, 255);
+}
+
+.app-content {
+    font-size: 20px;
+    margin: 40px 10px 20px 30px;
+
+
+}
+
+.app-content__data {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    margin-top: 20px;
+
+}
+
+.app-date {
+    display: flex;
+}
+
+.app-date__day {
+    font-size: 40px;
+    color: rgba(89, 92, 107, 255);
+    margin-right: 5px;
+}
+
+.app-date__month {
+    margin-top: 8px;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: rgba(115, 118, 131, 255);
+}
+
+.app-date__year {
+
+    font-size: 15px;
+    color: rgba(165, 167, 175, 255);
+}
+
+.app-header {
+    display: flex;
+}
+
+.app-header__date {
+    margin: 40px 50px 10px 30px;
+
+}
+
+.app-header__day {
+
+    margin: 60px 30px 10px 80px;
+    font-size: 15px;
+    color: rgba(115, 118, 131, 255);
+
+
+}
+
+input[type=radio] {
+    width: 20px;
+    height: 20px;
+}
+
+.lable-text {
+    color: grey;
 }
