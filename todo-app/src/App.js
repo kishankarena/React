@@ -2,6 +2,7 @@ import React from 'react';
 import AppHeader from './components/AppHeader';
 import './App.css'
 import AppContent from './components/AppContent';
+import AddTask from './components/addtask/AddTask';
 
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
         <div className="app">
             <AppHeader />
             <AppContent items={tasks} />
+            <AddTask />
 
         </div>
     )

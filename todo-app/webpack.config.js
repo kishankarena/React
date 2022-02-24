@@ -28,6 +28,13 @@ module.exports = {
                 test: /\.(png|jp(e*)g|svg|gif)$/,
                 use: ['file-loader'],
             },
+            {
+                test: /\.(jpg|png|svg)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 25000,
+                },
+            },
         ]
     },
     plugins: [

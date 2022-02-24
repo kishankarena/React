@@ -9,14 +9,16 @@ body {
     background-color: rgba(240, 239, 233, 255);
 }
 
+/* Main app */
 .app {
 
     margin: 100px auto;
     width: 350px;
-    /* max-height: 500px; */
+    height: 500px;
     background-color: rgba(255, 255, 255, 255);
 }
 
+/* AppContent */
 .app-content {
     font-size: 20px;
     margin: 40px 10px 20px 30px;
@@ -31,6 +33,7 @@ body {
 
 }
 
+/* AppDate */
 .app-date {
     display: flex;
 }
@@ -54,6 +57,7 @@ body {
     color: rgba(165, 167, 175, 255);
 }
 
+/* AppHeader */
 .app-header {
     display: flex;
 }
@@ -72,6 +76,7 @@ body {
 
 }
 
+/* AppList */
 input[type=radio] {
     width: 20px;
     height: 20px;
@@ -79,4 +84,44 @@ input[type=radio] {
 
 .lable-text {
     color: grey;
+}
+
+/* AddTask */
+/* .add-button {
+
+    border: 5px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+    background-color: rgba(80, 227, 164, 255);
+    color: rgba(70, 190, 139, 255);
+} */
+.add-button {
+    border: 0px;
+    border-radius: 70px;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    line-height: 0.428571429;
+    padding: 10px 0;
+    background-color: rgba(80, 227, 164, 255);
+    color: rgba(70, 190, 139, 255);
+    text-align: middle;
+    position: absolute;
+
+    left: 325px;
+    bottom: 350px;
+
+}
+
+/* TaskForm */
+.task-form {
+    display: grid;
+    grid-template-columns: 80% 10% 10%;
+}
+
+.taskform-action {
+    height: 15px;
+    width: 15px;
 }
