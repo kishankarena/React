@@ -1,19 +1,32 @@
 import React, { useState } from 'react'
 import TaskForm from './TaskForm';
 
+
 const AddTask = (props) => {
-    const [isEditting, setIsEditting] = useState(false);
+  const [isEditting, setIsEditting] = useState(false);
+  const addDataHandler = (addedData) => {
+    const taskData = {
+      ...addedData,
+      id: Math.random().toString()
+    };
+    props.onAddTask(taskData);
+    setIsEditting(false)
+  }
 
-    const addHandler = () => {
+  const startEditting = () => {
 
-        setIsEditting(true)
-    }
-    return (
-        <div>
-            {!isEditting && <button type="button" onClick={addHandler} className="add-button">+</button>}
-            {isEditting && <TaskForm />}
-        </div>
-    )
+    setIsEditting(true)
+  }
+  const stopEditting = () => {
+    setIsEditting(false)
+  }
+  return (
+    <div>
+      {!isEditting &&
+        <button type="button" onClick={startEditting} className="add-button">+</button>}
+      {isEditting && <TaskForm onCancle={stopEditting} onAddData={addDataHandler} />}
+    </div>
+  )
 }
 
 export default AddTask

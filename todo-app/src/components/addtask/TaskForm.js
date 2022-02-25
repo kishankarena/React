@@ -1,16 +1,31 @@
-import React from 'react'
-import cancle from '../../icons/cross.png'
-import add from '../../icons/add.png'
+import React, { useState } from 'react'
 
 const TaskForm = (props) => {
-    return (
-        <form className='task-form'>
-            <div><input type="text" /></div>
-            <div className='taskform-action'>
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const titleChangeHandler = (event) => {
+        setEnteredTitle(event.target.value)
+    };
+    const submitHandler = (event) => {
+        event.preventDefault();
+        if (enteredTitle === '') {
+            alert("Please enter task befor submit!!");
+            props.onCancle();
 
-                <button><img src={cancle} /></button>
-                <button><img src={add} /></button>
-            </div>
+        }
+        else {
+            const addedData = {
+                title: enteredTitle
+            };
+            props.onAddData(addedData);
+            setEnteredTitle('')
+        }
+    }
+    return (
+        <form className='task-form' onSubmit={submitHandler}>
+            <div><input type="text" value={enteredTitle} onChange={titleChangeHandler} /></div>
+            <div>  <button className='task-form__cancle' type='button' onClick={props.onCancle}>Cancle</button> </div>
+            <div> <button className='task-form__submit' type='submit'>Submit</button> </div>
+
         </form>
     )
 }
