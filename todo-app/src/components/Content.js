@@ -1,24 +1,19 @@
 import React, { useState } from 'react'
-import AppList from './AppList'
+import List from './List'
 
-
-
-
-const AppContent = (props) => {
-
+const Content = (props) => {
     return (
         <ul className='app-content'>
-
             {props.items.map((task) => {
                 return (
-                    <AppList
+                    <List
                         key={task.id}
+                        storageKey={task.id}
                         title={task.title} />
                 )
-
             })}
         </ul>
     )
 }
 
-export default AppContent
+export default Content

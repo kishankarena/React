@@ -1,52 +1,58 @@
-import React, { useState } from 'react';
-import AppHeader from './components/AppHeader';
+import React, { useState, useEffect } from 'react';
+import Header from './components/Header';
 import './App.css'
-import AppContent from './components/AppContent';
+import Content from './components/Content';
 import AddTask from './components/addtask/AddTask';
 
-const DEFAULT_TASK = [
-  {
-    id: 'e1',
-    title: 'Buy new sweatshirt'
-  },
-  {
-    id: 'e2',
-    title: 'Begin promotional'
-  },
-  {
-    id: 'e3',
-    title: 'Read an article'
-  },
-  {
-    id: 'e4',
-    title: 'Try not to fall asleep'
-  },
-  {
-    id: 'e5',
-    title: 'Watch \'Sherlock\''
-  },
-  {
-    id: 'e6',
-    title: 'Begin QA for the product'
-  },
-  {
-    id: 'e7',
-    title: 'Go for a walk'
-  },
-];
+const getTitle = () => {
+  const list = localStorage.getItem('title');
+  if (list) {
+    return JSON.parse(localStorage.getItem('title'));
+  }
+  else {
+    return [];
+  }
+
+};
+
 const App = () => {
-  const [tasks, setTasks] = useState(DEFAULT_TASK);
+  const [date, setDate] = useState(new Date());
+  const [tasks, setTasks] = useState(getTitle());
+
+  let taskDate = parseInt(localStorage.getItem('taskDate'));
+  let currDate = date.getDate();
+
+  useEffect(() => {
+    if (currDate !== taskDate) {
+      localStorage.clear();
+      console.log("clear localstorage")
+      if (localStorage.getItem('title') === null) {
+        // console.log("re-render")
+        setTasks(getTitle());
+      }
+    }
+  }, [date.getMinutes()]);
+
+  setInterval(() => {
+    setDate(new Date());
+    console.log("set date");
+  }, 60 * 1000);
+
+  // Add task to local storage
   const addTaskHandler = (taskData) => {
     setTasks((prevTaskData) => {
       return [...prevTaskData, taskData];
     })
   };
+  useEffect(() => {
+    localStorage.setItem('title', JSON.stringify(tasks))
+  }, [tasks])
+
   return (
     <div className="app">
-      <AppHeader />
-      <AppContent items={tasks} />
+      <Header date={date} />
+      <Content items={tasks} />
       <AddTask onAddTask={addTaskHandler} />
-
     </div>
   )
 }

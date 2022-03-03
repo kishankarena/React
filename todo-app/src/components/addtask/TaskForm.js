@@ -10,22 +10,35 @@ const TaskForm = (props) => {
         if (enteredTitle === '') {
             alert("Please enter task befor submit!!");
             props.onCancle();
-
         }
         else {
             const addedData = {
                 title: enteredTitle
             };
             props.onAddData(addedData);
+            localStorage.setItem('taskDate', new Date().getDate());
             setEnteredTitle('')
         }
     }
-    return (
-        <form className='task-form' onSubmit={submitHandler}>
-            <div><input type="text" value={enteredTitle} onChange={titleChangeHandler} /></div>
-            <div>  <button className='task-form__cancle' type='button' onClick={props.onCancle}>Cancle</button> </div>
-            <div> <button className='task-form__submit' type='submit'>Submit</button> </div>
+    const keyDownHandler = (e) => {
+        if (e.key === "Enter") {
+            submitHandler(e);
+        }
+        else if (e.key === "Escape") {
+            props.onCancle();
+        }
+    }
 
+    return (
+
+        <form className='task-form' >
+            <input
+                type="text"
+                placeholder='Add task here....'
+                value={enteredTitle}
+                onChange={titleChangeHandler}
+                onKeyDown={keyDownHandler}
+            />
         </form>
     )
 }
