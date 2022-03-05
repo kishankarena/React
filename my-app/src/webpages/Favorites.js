@@ -5,7 +5,7 @@ const Favorites = () => {
     });
     return (
         <div>
-            <h1>Book App</h1>
+            <h1>Favorites</h1>
             <p>These are my favorite books</p>
         </div>
     );

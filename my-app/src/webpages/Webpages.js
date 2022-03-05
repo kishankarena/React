@@ -18,11 +18,13 @@ const Webpages = () => {
         <BrowserRouter>
             <Header />
             <Navigation />
-            <Routes>
-                <Route exact path="/" element={<Home />} ></Route>
-                <Route path="/MyBooks" element={<MyBooks />}></Route>
-                <Route path="/Favorites" element={<Favorites />}></Route >
-            </Routes>
+            <div className="webpages">
+                <Routes>
+                    <Route exact path="/" element={<Home />} ></Route>
+                    <Route path="/MyBooks" element={<MyBooks />}></Route>
+                    <Route path="/Favorites" element={<Favorites />}></Route >
+                </Routes>
+            </div>
         </BrowserRouter>
     )
 };

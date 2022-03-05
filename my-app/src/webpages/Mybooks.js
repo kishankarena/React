@@ -5,7 +5,7 @@ const MyBooks = () => {
     });
     return (
         <div>
-            <h1>Book App</h1>
+            <h1>MyBooks</h1>
             <p>These are my books...</p>
         </div>
     );
