@@ -24,18 +24,18 @@ const App = () => {
 
   useEffect(() => {
     if (currDate !== taskDate) {
-      localStorage.clear();
+      // localStorage.clear();
       console.log("clear localstorage")
       if (localStorage.getItem('title') === null) {
         // console.log("re-render")
         setTasks(getTitle());
       }
     }
-  }, [date.getMinutes()]);
+  }, [currDate, taskDate]);
 
   setInterval(() => {
     setDate(new Date());
-    console.log("set date");
+    // console.log("set date");
   }, 60 * 1000);
 
   // Add task to local storage
@@ -57,5 +57,3 @@ const App = () => {
   )
 }
 export default App;
-
-
