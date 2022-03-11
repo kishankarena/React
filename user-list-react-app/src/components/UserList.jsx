@@ -1,50 +1,54 @@
 import React from "react";
-// import UserProfile from "./UserProfile";
-import userData from "../userData.json";
-import ownerImage from "../images/jana.jpeg";
+import OwnerProfile from "./OwnerProfile";
 import UserProfile from "./UserProfile";
 
-const UserList = () => {
+const UserList = (props) => {
   return (
-    <div>
+    <div className="user-list">
       <table>
         <thead>
           <tr>
             <th>Name</th>
             <th>Status</th>
             <th>Access</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="d-flex">
-              <div className="owner-image">
-                <img src={ownerImage} alt="avatar" />
-              </div>
-              <div className="">
-                <div>{userData[0].userName}</div>
-                <div className="text-muted">{userData[0].userEmail}</div>
-              </div>
-            </td>
-            <td>
-              <div>{userData[0].userStatus}</div>
-            </td>
-            <td>
-              <div>{userData[0].userAccess}</div>
-            </td>
-          </tr>
-
-          {userData.map((data) => {
+          {props.userData.map((data, index) => {
             return (
-              <tr>
-                <UserProfile
-                  image={data.userImage}
-                  name={data.userName}
-                  email={data.userEmail}
-                  status={data.userStatus}
-                  access={data.userAccess}
-                />
-              </tr>
+              <>
+                {index === 0 && (
+                  <tr className="mt-2">
+                    <OwnerProfile
+                      image={data.userImage}
+                      name={data.userName}
+                      email={data.userEmail}
+                      status={data.userStatus}
+                      access={data.userAccess}
+                    />
+                  </tr>
+                )}
+                {index !== 0 && (
+                  <tr
+                    className="pt-5"
+                    onMouseEnter={() => {
+                      props.handleHover(data);
+                    }}
+                    onMouseLeave={() => {
+                      props.handleHover(null);
+                    }}
+                  >
+                    <UserProfile
+                      image={data.userImage}
+                      name={data.userName}
+                      email={data.userEmail}
+                      status={data.userStatus}
+                      access={data.userAccess}
+                    />
+                  </tr>
+                )}
+              </>
             );
           })}
         </tbody>

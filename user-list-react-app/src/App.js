@@ -1,10 +1,10 @@
-import './App.css';
-import UserList from './components/UserList';
+import "./App.css";
+import UserComponentWrapper from "./components/componentWrapper/UserComponentWrapper";
 
 function App() {
   return (
     <div>
-      <UserList />
+      <UserComponentWrapper />
     </div>
   );
 }
