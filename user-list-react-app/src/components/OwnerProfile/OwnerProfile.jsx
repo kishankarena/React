@@ -1,4 +1,5 @@
 import React from "react";
+import "./OwnerProfile.css";
 import { Lock } from "react-feather";
 
 const OwnerProfile = (props) => {

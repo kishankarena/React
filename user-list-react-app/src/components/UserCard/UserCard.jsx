@@ -1,4 +1,5 @@
 import React from "react";
+import "./UserCard.css";
 import { ProgressBar } from "react-bootstrap";
 
 const UserCard = (props) => {
@@ -10,7 +11,7 @@ const UserCard = (props) => {
   return (
     <>
       {props.user !== null && (
-        <div className="user-card">
+        <div className="user-card bg-white">
           <img src={props.user.userImage} alt="avtar" />
           <h5 className="mt-3">
             {props.user.userName} <span className="dot">&#729;</span>

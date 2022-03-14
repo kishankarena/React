@@ -1,4 +1,5 @@
 import React from "react";
+import "./UserProfile";
 import { Trash2 } from "react-feather";
 
 const UserProfile = (props) => {

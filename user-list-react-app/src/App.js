@@ -1,12 +1,8 @@
 import "./App.css";
-import UserComponentWrapper from "./components/componentWrapper/UserComponentWrapper";
+import UserComponentWrapper from "./componentWrapper/UserComponentWrapper";
 
-function App() {
-  return (
-    <div>
-      <UserComponentWrapper />
-    </div>
-  );
-}
+const App = () => {
+  return <UserComponentWrapper />;
+};
 
 export default App;

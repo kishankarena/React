@@ -1,6 +1,7 @@
 import React from "react";
-import OwnerProfile from "./OwnerProfile";
-import UserProfile from "./UserProfile";
+import "./UserList.css";
+import OwnerProfile from "../OwnerProfile/OwnerProfile";
+import UserProfile from "../UserProfile/UserProfile";
 
 const UserList = (props) => {
   return (
