@@ -1,7 +1,6 @@
-let task = '';
-export const addTask = () => {
-    return {
-        type: "ADD_TASK",
-        id: Date.now()
-    }
-}
+ export const addTask = (taskData) => {
+  return {
+    type: "ADD_TASK",
+    title: taskData,
+  };
+};
