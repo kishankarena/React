@@ -9,7 +9,7 @@ const TaskForm = (props) => {
     event.preventDefault();
     if (enteredTitle === "") {
       alert("Please enter task befor submit!!");
-      props.onCancle();
+      // props.onCancle();
     } else {
       const addedData = {
         title: enteredTitle,

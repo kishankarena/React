@@ -9,7 +9,7 @@ const AddTask = (props) => {
       id: Date.now(),
     };
     props.onAddTask(taskData);
-    setIsEditting(false);
+    // setIsEditting(false);
   };
   const startEditting = () => {
     setIsEditting(true);
