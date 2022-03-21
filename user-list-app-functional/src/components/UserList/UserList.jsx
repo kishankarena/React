@@ -19,8 +19,8 @@ const UserList = (props) => {
           {props.userData.map((data, index) => {
             return (
               <>
-                {index === 0 && (
-                  <tr className="mt-2">
+                {index === 0 ? (
+                  <tr>
                     <OwnerProfile
                       key={data.id}
                       image={data.avatar}
@@ -28,22 +28,14 @@ const UserList = (props) => {
                       email={data.email}
                     />
                   </tr>
-                )}
-                {index !== 0 && (
-                  <tr
-                    className="pt-5"
-                    onMouseEnter={() => {
-                      props.handleHover(data);
-                    }}
-                    onMouseLeave={() => {
-                      props.handleHover(null);
-                    }}
-                  >
+                ) : (
+                  <tr>
                     <UserProfile
                       key={data.id}
                       image={data.avatar}
                       name={`${data.first_name} ${data.last_name}`}
                       email={data.email}
+                      handleHover={props.handleHover}
                     />
                   </tr>
                 )}

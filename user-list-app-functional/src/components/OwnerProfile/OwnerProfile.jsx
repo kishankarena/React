@@ -3,7 +3,7 @@ import "./OwnerProfile.css";
 import { Lock } from "react-feather";
 
 const OwnerProfile = (props) => {
-  const { image, name, email, status, access } = props;
+  const { image, name, email } = props;
   return (
     <>
       <td className="d-flex">
@@ -16,10 +16,10 @@ const OwnerProfile = (props) => {
         </div>
       </td>
       <td>
-        <div className="mx-2 text-success">{status}</div>
+        <div className="mx-2 text-success">Active</div>
       </td>
       <td>
-        <div className="mx-2">{access}</div>
+        <div className="mx-2">Owner</div>
       </td>
       <td>
         <Lock className="text-muted" size={20} />

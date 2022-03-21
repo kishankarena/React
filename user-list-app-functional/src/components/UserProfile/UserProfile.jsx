@@ -3,10 +3,18 @@ import "./UserProfile";
 import { Trash2 } from "react-feather";
 
 const UserProfile = (props) => {
-  const { image, name, email} = props;
+  const { image, name, email, handleHover } = props;
   return (
     <>
-      <td className="d-flex">
+      <td
+        className="d-flex"
+        onMouseEnter={() => {
+          handleHover(props);
+        }}
+        onMouseLeave={() => {
+          handleHover(null);
+        }}
+      >
         <div className="me-2">
           <img src={image} alt="avatar" />
         </div>
@@ -18,15 +26,15 @@ const UserProfile = (props) => {
       <td>
         <div className="mx-2">
           <select>
-            <option defaultValue="Inactive">Inactive</option>
             <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
           </select>
         </div>
       </td>
       <td>
         <div className="mx-2">
           <select>
-            <option defaultValue="Manager">Manager</option>
+            <option value="Manager">Manager</option>
             <option value="Read">Read</option>
           </select>
         </div>

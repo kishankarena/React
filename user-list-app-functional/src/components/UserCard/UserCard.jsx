@@ -12,12 +12,11 @@ const UserCard = (props) => {
     <>
       {props.user !== null && (
         <div className="user-card bg-white">
-          <img src={props.user.userImage} alt="avtar" />
+          <img src={props.user.image} alt="avtar" />
           <h5 className="mt-3">
-            {props.user.userName} <span className="dot">&#729;</span>
+            {props.user.name} <span className="dot">&#729;</span>
           </h5>
-
-          <h6 className="text-muted">{props.user.userEmail}</h6>
+          <h6 className="text-muted">{props.user.email}</h6>
           <h5>Your Plan: Standard</h5>
           <button>Active USer</button>
           <div>
