@@ -1,8 +1,11 @@
 import React from "react";
 import "./UserCard.css";
 import { ProgressBar } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
-const UserCard = (props) => {
+const UserCard = () => {
+  const user = useSelector((state) => state.user);
+  const { image, name, email, isVisible } = user;
   const progressFunction = () => {
     return Math.floor(Math.random() * 5000);
   };
@@ -10,13 +13,13 @@ const UserCard = (props) => {
 
   return (
     <>
-      {props.user !== null && (
+      {isVisible && (
         <div className="user-card bg-white">
-          <img src={props.user.image} alt="avtar" />
+          <img src={image} alt="avtar" />
           <h5 className="mt-3">
-            {props.user.name} <span className="dot">&#729;</span>
+            {name} <span className="dot">&#729;</span>
           </h5>
-          <h6 className="text-muted">{props.user.email}</h6>
+          <h6 className="text-muted">{email}</h6>
           <h5>Your Plan: Standard</h5>
           <button>Active USer</button>
           <div>

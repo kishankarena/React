@@ -35,7 +35,6 @@ const UserList = (props) => {
                       image={data.avatar}
                       name={`${data.first_name} ${data.last_name}`}
                       email={data.email}
-                      handleHover={props.handleHover}
                     />
                   </tr>
                 )}

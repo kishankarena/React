@@ -1,31 +1,25 @@
 import React, { useState, useEffect } from "react";
 import UserCard from "../components/UserCard/UserCard";
 import UserList from "../components/UserList/UserList";
-import { response } from "../misc/configData";
-import ReactPaginate from "react-paginate"
+import { getUserData } from "../misc/configData";
+import ReactPaginate from "react-paginate";
 
 const UserComponentWrapper = () => {
-  const [user, setUser] = useState(null);
   const [userData, setUserData] = useState([]);
+  const [pageNum, setPageNum] = useState(1);
   useEffect(() => {
-    response.then((result) => {
+    getUserData(pageNum).then((result) => {
       setUserData(result.data);
     });
-  }, []);
+  }, [pageNum]);
 
   const handlePageClick = (event) => {
-    console.log(event.selected);
-
+    setPageNum(event.selected + 1);
   };
 
   return (
     <div className="bg-white ms-5 me-5">
-      <UserList
-        userData={userData}
-        handleHover={(user) => {
-          setUser(user);
-        }}
-      />
+      <UserList userData={userData} />
       <div className="d-flex justify-content-center">
         <ReactPaginate
           previousLabel={<>&laquo;</>}
@@ -37,10 +31,11 @@ const UserComponentWrapper = () => {
           pageLinkClassName="page-link"
           previousLinkClassName="page-link"
           nextLinkClassName="page-link"
+          activeClassName="active"
         />
       </div>
 
-      <UserCard user={user} />
+      <UserCard />
     </div>
   );
 };

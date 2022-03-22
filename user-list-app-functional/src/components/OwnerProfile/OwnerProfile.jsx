@@ -11,18 +11,18 @@ const OwnerProfile = (props) => {
           <img src={image} alt="avatar" />
         </div>
         <div>
-          <div>{name}</div>
-          <div className="text-muted">{email}</div>
+          <div className="fs-5">{name}</div>
+          <div className="text-muted fs-6">{email}</div>
         </div>
       </td>
       <td>
-        <div className="mx-2 text-success">Active</div>
+        <div className="mx-2 text-success fs-5">Active</div>
       </td>
       <td>
-        <div className="mx-2">Owner</div>
+        <div className="mx-2 fs-5">Owner</div>
       </td>
       <td>
-        <Lock className="text-muted" size={20} />
+        <Lock className="text-muted" size={30} />
       </td>
     </>
   );

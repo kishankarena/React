@@ -4,6 +4,7 @@
 
 .user-list table {
     width: 60%;
+    margin-left: 30px;
 }
 
 th {
@@ -11,10 +12,11 @@ th {
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 20px;
+    font-size: 20px;
 }
 
 td {
-    padding: 20px 10px;
+    padding: 30px 10px;
 }
 
 

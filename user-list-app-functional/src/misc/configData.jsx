@@ -1,3 +1,6 @@
-export const response = fetch("https://reqres.in/api/users?page=1").then((r) =>
-  r.json()
-);
+export const getUserData = async (pageNum) => {
+  const response = await fetch(
+    `https://reqres.in/api/users?page=${pageNum}`
+  ).then((r) => r.json());
+  return response;
+};
