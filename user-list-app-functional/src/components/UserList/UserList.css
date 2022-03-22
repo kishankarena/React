@@ -1,0 +1,29 @@
+.user-list {
+    width: 100%;
+}
+
+.user-list table {
+    width: 60%;
+    margin-left: 30px;
+}
+
+th {
+    text-align: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+td {
+    padding: 30px 10px;
+}
+
+
+
+select {
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #f2f3f4;
+}
