@@ -1,0 +1,46 @@
+.user-card {
+    position: absolute;
+    right: 10px;
+    top: 230px;
+    width: 320px;
+    height: 470px;
+    text-align: center;
+    box-shadow: 10px 10px 10px 10px #d2d2db;
+    border-radius: 20px;
+}
+
+.dot {
+    font-size: 40px;
+    color: #1BB62D;
+}
+
+.user-card img {
+    margin-top: 30px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.user-card button {
+    color: #ffff;
+    background-color: #feb23e;
+    border: none;
+    border-radius: 4px;
+    width: 190px;
+    height: 40px;
+}
+
+.userCardLine {
+    border: 0.2px solid rgba(0, 0, 0, 0.2);
+    margin: 0px 20px;
+}
+
+.progress-barparent {
+    margin: px;
+    height: 5px;
+}
+
+.progress-barparent .progress-bar {
+    background: #feb23e;
+    width: 70%;
+}
