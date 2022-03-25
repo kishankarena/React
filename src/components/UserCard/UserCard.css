@@ -1,5 +1,5 @@
 .user-card {
-    position: fixed;
+    position: absolute;
     right: 10px;
     top: 230px;
     width: 320px;
