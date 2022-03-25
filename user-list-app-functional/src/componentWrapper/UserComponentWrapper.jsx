@@ -3,6 +3,7 @@ import UserCard from "../components/UserCard/UserCard";
 import UserList from "../components/UserList/UserList";
 import { getUserData } from "../misc/configData";
 import ReactPaginate from "react-paginate";
+import "./UserComponentWrapper.css";
 
 const UserComponentWrapper = () => {
   const [userData, setUserData] = useState([]);
@@ -18,7 +19,7 @@ const UserComponentWrapper = () => {
   };
 
   return (
-    <div className="bg-white ms-5 me-5">
+    <div className="Wrapper bg-white">
       <UserList userData={userData} />
       <div className="d-flex justify-content-center">
         <ReactPaginate
