@@ -12,8 +12,6 @@ const UserProfile = (props) => {
       <td
         className="d-flex"
         onMouseEnter={() => {
-          // console.log("props:", props);
-          // handleHover(props);
           dispatch(mouseEnter(props));
         }}
         onMouseLeave={() => {

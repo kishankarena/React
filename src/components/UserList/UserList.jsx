@@ -16,10 +16,10 @@ const UserList = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.userData.map((data, index) => {
+          {props.userData.map((data) => {
             return (
               <>
-                {index === 0 ? (
+                {data.id === 1 ? (
                   <tr>
                     <OwnerProfile
                       key={data.id}

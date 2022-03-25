@@ -10,7 +10,6 @@ const UserCard = () => {
     return Math.floor(Math.random() * 5000);
   };
   const progressValue = progressFunction();
-
   return (
     <>
       {isVisible && (

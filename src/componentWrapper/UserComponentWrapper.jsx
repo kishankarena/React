@@ -12,7 +12,6 @@ const UserComponentWrapper = () => {
       setUserData(result.data);
     });
   }, [pageNum]);
-
   const handlePageClick = (event) => {
     setPageNum(event.selected + 1);
   };
