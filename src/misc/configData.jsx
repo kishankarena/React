@@ -1,6 +1,6 @@
 export const getUserData = async (pageNum) => {
   const response = await fetch(
-    `https://reqres.in/api/users?page=${pageNum}`
+    `${process.env.REACT_APP_MY_API}?page=${pageNum}`
   ).then((r) => r.json());
   return response;
 };
