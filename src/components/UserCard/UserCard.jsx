@@ -16,13 +16,14 @@ const UserCard = () => {
         <div className="user-card bg-white">
           <img src={image} alt="avtar" />
           <h5 className="mt-3">
-            {name} <span className="dot">&#729;</span>
+            {name}
+            <span className="dot">&#729;</span>
           </h5>
           <h6 className="text-muted">{email}</h6>
           <h5>Your Plan: Standard</h5>
           <button>Active USer</button>
           <div>
-            <div className=" mt-2 ms-4 text-start"> Plan Uses</div>
+            <div className=" mt-2 ms-4 text-start">Plan Uses</div>
 
             <ProgressBar
               className="progress-barparent ms-4 me-4 mt-2"
