@@ -1,5 +1,5 @@
 import React from "react";
-import { Field } from "formik";
+import { Field, ErrorMessage } from "formik";
 import "./textField.css";
 
 const TextField = ({ label, type, name }) => {
@@ -8,7 +8,13 @@ const TextField = ({ label, type, name }) => {
       <label className="mt-4" htmlFor="name">
         {label}
       </label>
-      <Field className="form-control text-field" name={name} type={type} />
+      <Field
+        className="form-control field"
+        name={name}
+        type={type}
+        label={label}
+      />
+      <ErrorMessage className="text-danger" name={name} component="div" />
     </div>
   );
 };
