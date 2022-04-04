@@ -1,20 +1,20 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import "./App.css";
-import Signup from "./components/SignUp/SignUp";
-import bgimage from "./Images/bgimage.png";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Signup from "./Pages/SignUp/SignUp";
+import Home from "./Pages/Home/Home";
 
 function App() {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <Signup />
-        </div>
-        <div className="col">
-          <img src={bgimage} className="" alt="bgimage" />
-        </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route exact path="/" element={<Signup />}></Route>
+          <Route path="/home" element={<Home />}></Route>
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
