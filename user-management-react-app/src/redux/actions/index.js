@@ -1,11 +1,11 @@
-export const submit =(data)=>{
-    return{
-     type:"submit",
-     payload:data,
-    };
-}
+export const submit = (userData) => {
+  return {
+    type: "submit",
+    payload: userData,
+  };
+};
 export const logout = () => {
-    return{
-        type:"logout"
-    };
-}
+  return {
+    type: "logout",
+  };
+};

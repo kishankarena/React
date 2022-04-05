@@ -4,8 +4,11 @@ import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 
 import TextField from "../TextField/TextField";
+import { useDispatch } from "react-redux";
+import { submit } from "../../redux/actions";
 
 function Signup() {
+  const dispatch = useDispatch();
   const SUPPORTED_FORMAT = ["image/png", "image/jpeg", "image/jpg"];
   const phoneRegEx = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[56789]\d{9}$/gm;
   const passwordRegEx =
@@ -56,15 +59,23 @@ function Signup() {
         }}
         validationSchema={validateFormSchema}
         onSubmit={(value) => {
+          console.log(value);
+          const { name, email, phoneNo, photo } = value;
           nevigate("/home");
+          dispatch(
+            submit({
+              name,
+              email,
+              phoneNo,
+              photo: URL.createObjectURL(photo),
+            })
+          );
           console.log("Submit:", value);
         }}
       >
-        {/* {({ setFieldValue, values, formik }) => ( */}
-        {(formik) => (
+        {({ setFieldValue, values }) => (
           <div>
-            {/* {console.log("valuee", values, formik)} */}
-            {console.log(formik)}
+            {console.log("values", values)}
             <Form>
               <div className="text-center fs-5">
                 <label htmlFor="photo">photo+</label>
@@ -74,13 +85,11 @@ function Signup() {
                   type="file"
                   accept={["image/png", "image/jpeg", "image/jpg"]}
                   onChange={(e) => {
-                    formik.setFieldValue("photo", e.currentTarget.files[0]);
+                    setFieldValue("photo", e.currentTarget.files[0]);
                   }}
                   hidden
                 />
-                {formik.values.photo && (
-                  <div> Uploaded: {formik.values.photo.name}</div>
-                )}
+                {values.photo && <div> Uploaded: {values.photo.name}</div>}
                 <ErrorMessage
                   className="text-danger"
                   name="photo"

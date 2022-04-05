@@ -4,6 +4,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Signup from "./Pages/SignUp/SignUp";
 import Home from "./Pages/Home/Home";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
       <div>
         <Routes>
           <Route exact path="/" element={<Signup />}></Route>
-          <Route path="/home" element={<Home />}></Route>
+          <Route element={<PrivateRoute />}>
+            <Route path="/home" element={<Home />}></Route>
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>

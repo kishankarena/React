@@ -1,0 +1,15 @@
+.profile-pic {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.usercard {
+    border: solid 2px #93b8db;
+    border-radius: 10px;
+    background-color: #cce6ff;
+    box-shadow: 0 10px 15px 0 #808080;
+    width: 1000px;
+    height: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

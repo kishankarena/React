@@ -1,5 +1,5 @@
 const initialValue = {
-  data: { name: "", email: "", phoneNo: "", photo: "" },
+  userData: { name: "", email: "", phoneNo: "", photo: "", isLogged: true },
 };
 export const userDataReducer = (state = initialValue, action) => {
   switch (action.type) {
@@ -7,20 +7,18 @@ export const userDataReducer = (state = initialValue, action) => {
       const { name, email, phoneNo, photo } = action.payload;
       return {
         ...state,
-        data: {
-          ...state.data,
+        userData: {
           name,
           email,
           phoneNo,
           photo,
+          isLogged: true,
         },
       };
     }
     case "logout":
-      return {
-        ...state,
-        initialValue,
-      };
+      return { userData: initialValue.userData };
+
     default:
       return state;
   }
