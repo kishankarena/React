@@ -9,11 +9,9 @@ function Home() {
   const userData = useSelector((state) => state.userData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log("homepage", userData);
   const { name, email, phoneNo, photo } = userData;
   const logoutHandler = () => {
     dispatch(logout());
-    console.log("Logged out", userData);
     navigate("/");
   };
   return (

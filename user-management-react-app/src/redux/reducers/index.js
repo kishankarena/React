@@ -1,5 +1,6 @@
 const initialValue = {
-  userData: { name: "", email: "", phoneNo: "", photo: "", isLogged: true },
+  userData: { name: "", email: "", phoneNo: "", photo: "" },
+  isLogged: false,
 };
 export const userDataReducer = (state = initialValue, action) => {
   switch (action.type) {
@@ -12,8 +13,8 @@ export const userDataReducer = (state = initialValue, action) => {
           email,
           phoneNo,
           photo,
-          isLogged: true,
         },
+        isLogged: true,
       };
     }
     case "logout":

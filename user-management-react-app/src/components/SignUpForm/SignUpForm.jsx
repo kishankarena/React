@@ -9,11 +9,12 @@ import { submit } from "../../redux/actions";
 
 function Signup() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const SUPPORTED_FORMAT = ["image/png", "image/jpeg", "image/jpg"];
   const phoneRegEx = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[56789]\d{9}$/gm;
   const passwordRegEx =
     /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
-  const nevigate = useNavigate();
+
   const validateFormSchema = Yup.object().shape({
     name: Yup.string()
       .min(15, "Length is at least 15 char.")
@@ -61,7 +62,6 @@ function Signup() {
         onSubmit={(value) => {
           console.log(value);
           const { name, email, phoneNo, photo } = value;
-          nevigate("/home");
           dispatch(
             submit({
               name,
@@ -70,6 +70,7 @@ function Signup() {
               photo: URL.createObjectURL(photo),
             })
           );
+          navigate("/home");
           console.log("Submit:", value);
         }}
       >

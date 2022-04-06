@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Signup from "./Pages/SignUp/SignUp";
 import Home from "./Pages/Home/Home";
 import PrivateRoute from "./components/PrivateRoute";
