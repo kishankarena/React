@@ -60,7 +60,6 @@ function Signup() {
         }}
         validationSchema={validateFormSchema}
         onSubmit={(value) => {
-          console.log(value);
           const { name, email, phoneNo, photo } = value;
           dispatch(
             submit({
@@ -71,12 +70,10 @@ function Signup() {
             })
           );
           navigate("/home");
-          console.log("Submit:", value);
         }}
       >
         {({ setFieldValue, values }) => (
           <div>
-            {console.log("values", values)}
             <Form>
               <div className="text-center fs-5">
                 <label htmlFor="photo">photo+</label>
