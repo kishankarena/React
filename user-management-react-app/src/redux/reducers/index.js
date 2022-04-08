@@ -18,7 +18,7 @@ export const userDataReducer = (state = initialValue, action) => {
       };
     }
     case "logout":
-      return { userData: initialValue.userData };
+      return { userData: initialValue.userData, isLogged: false };
 
     default:
       return state;

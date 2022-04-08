@@ -6,7 +6,7 @@ import "./signUp.css";
 
 function SignUp() {
   return (
-    <div className="mt-5 signup container px-3 py-3 bg-light">
+    <div className=" signUp container px-3 py-3 ">
       <div className="row">
         <div className="col">
           <SignupForm />

@@ -18,6 +18,7 @@ function Signup() {
   const validateFormSchema = Yup.object().shape({
     name: Yup.string()
       .min(15, "Length is at least 15 char.")
+      .matches(/^[A-Za-z ]*$/, "Please enter valid name")
       .required("Required"),
     email: Yup.string().email("Invalid email").required("Required"),
     phoneNo: Yup.string()

@@ -15,7 +15,7 @@ function Home() {
     navigate("/");
   };
   return (
-    <>
+    <div className="  bg-white">
       <nav className="navbar navbar-expand-lg bg-primary d-flex justify-content-between">
         <div className="container container-fluid">
           <div className="navbar-brand me-2 fs-2 text-light">Home Page</div>
@@ -42,7 +42,7 @@ function Home() {
           phone number -<span className="text-primary">{phoneNo}</span>”
         </p>
       </div>
-    </>
+    </div>
   );
 }
 
